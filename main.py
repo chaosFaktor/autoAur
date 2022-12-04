@@ -12,7 +12,7 @@ def escape():
 
 
 
-os.chdir("/media/HDD/programmier8/control/autoAur/")
+os.chdir("/home/kali/Control/autoAur")
 
 
 args = sys.argv
@@ -25,13 +25,7 @@ if len(args)>1:
         pkgName = os.listdir("./")[0]
         os.chdir("./"+pkgName)
         os.system("makepkg -si")
-        print("Installed package: "+pkgName+"\nDo you want to add the package to the update file? (Y,n)")
-        inp=input("——>")
-        if inp in "yYjJ":
-            os.chdir("../../")
-            if not url in open("./update", "r").read():
-                open("./update", "a").write(url+"\n")
-        escape()
+        
 
 
 opt = ["Install", "Install with manual flag", "Update package" "Quit"]
