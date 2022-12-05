@@ -25,7 +25,7 @@ if len(args)>1:
         pkgName = os.listdir("./")[0]
         os.chdir("./"+pkgName)
         os.system("makepkg -si")
-        
+        escape()
 
 
 opt = ["Install", "Install with manual flag", "Update package" "Quit"]
